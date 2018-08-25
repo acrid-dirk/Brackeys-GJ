@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
@@ -25,10 +26,14 @@ public class MainMenu : MonoBehaviour {
 		if(canFade){
 			fadeOut.color = fadeColor;	
 			fadeColor.a += 1f * Time.deltaTime;
+			if(fadeColor.a >= 1){
+				SceneManager.LoadScene(1);
+			}
 		}
 	}
 	public void Play(){
 		canFade = true;
+		
 	}
 	public void Help(){
 		currentPanel = helpPanel;
