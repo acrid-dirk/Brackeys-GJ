@@ -4553,7 +4553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charCamera: {fileID: 534669905}
   mouseSensitivity: 2
-  launchPower: 700
+  launchPower: 1400
   launchKey: 32
 --- !u!4 &1442860633
 Transform:
