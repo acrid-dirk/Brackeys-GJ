@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: d7d4e44eb2461b04ea7a9c6cc993a142
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Corridor.001
+    100004: CWall.001
+    100006: CWallPie.001
+    100008: D_EdgeWall_1
+    100010: D_FlatWall_1
+    100012: D_FlatWall_2
+    100014: D_FlatWall_3
+    100016: O_Corridor
+    100018: O_CWall
+    100020: O_CWallPie
+    100022: O_Rock03
+    100024: O_Rock04
+    100026: O_Rock05
+    100028: O_Rock06
+    100030: O_Rock07
+    100032: O_Rock07.V01
+    100034: O_Rock07.V02
+    100036: O_Rock07.V03
+    100038: Plane
+    100040: Plane.001
+    100042: T_EdgeWall_1
+    100044: T_FlatWall
+    100046: T_FlatWall_NonTri
+    100048: Vine
+    100050: Walless_1
+    100052: Walless_1_Btm
+    100054: Walless_1_Top
+    100056: Z_OldRoof
+    100058: Z_Plane
+    400000: //RootNode
+    400002: Corridor.001
+    400004: CWall.001
+    400006: CWallPie.001
+    400008: D_EdgeWall_1
+    400010: D_FlatWall_1
+    400012: D_FlatWall_2
+    400014: D_FlatWall_3
+    400016: O_Corridor
+    400018: O_CWall
+    400020: O_CWallPie
+    400022: O_Rock03
+    400024: O_Rock04
+    400026: O_Rock05
+    400028: O_Rock06
+    400030: O_Rock07
+    400032: O_Rock07.V01
+    400034: O_Rock07.V02
+    400036: O_Rock07.V03
+    400038: Plane
+    400040: Plane.001
+    400042: T_EdgeWall_1
+    400044: T_FlatWall
+    400046: T_FlatWall_NonTri
+    400048: Vine
+    400050: Walless_1
+    400052: Walless_1_Btm
+    400054: Walless_1_Top
+    400056: Z_OldRoof
+    400058: Z_Plane
+    2100000: No Name
+    2300000: Corridor.001
+    2300002: CWall.001
+    2300004: CWallPie.001
+    2300006: D_EdgeWall_1
+    2300008: D_FlatWall_1
+    2300010: D_FlatWall_2
+    2300012: D_FlatWall_3
+    2300014: O_Corridor
+    2300016: O_CWall
+    2300018: O_CWallPie
+    2300020: O_Rock03
+    2300022: O_Rock04
+    2300024: O_Rock05
+    2300026: O_Rock06
+    2300028: O_Rock07
+    2300030: O_Rock07.V01
+    2300032: O_Rock07.V02
+    2300034: O_Rock07.V03
+    2300036: Plane
+    2300038: Plane.001
+    2300040: T_EdgeWall_1
+    2300042: T_FlatWall
+    2300044: T_FlatWall_NonTri
+    2300046: Vine
+    2300048: Walless_1
+    2300050: Walless_1_Btm
+    2300052: Walless_1_Top
+    2300054: Z_OldRoof
+    2300056: Z_Plane
+    2300058: //RootNode
+    3300000: Corridor.001
+    3300002: CWall.001
+    3300004: CWallPie.001
+    3300006: D_EdgeWall_1
+    3300008: D_FlatWall_1
+    3300010: D_FlatWall_2
+    3300012: D_FlatWall_3
+    3300014: O_Corridor
+    3300016: O_CWall
+    3300018: O_CWallPie
+    3300020: O_Rock03
+    3300022: O_Rock04
+    3300024: O_Rock05
+    3300026: O_Rock06
+    3300028: O_Rock07
+    3300030: O_Rock07.V01
+    3300032: O_Rock07.V02
+    3300034: O_Rock07.V03
+    3300036: Plane
+    3300038: Plane.001
+    3300040: T_EdgeWall_1
+    3300042: T_FlatWall
+    3300044: T_FlatWall_NonTri
+    3300046: Vine
+    3300048: Walless_1
+    3300050: Walless_1_Btm
+    3300052: Walless_1_Top
+    3300054: Z_OldRoof
+    3300056: Z_Plane
+    3300058: //RootNode
+    4300000: D_EdgeWall_1
+    4300002: Plane.001
+    4300004: Plane
+    4300006: D_FlatWall_3
+    4300008: D_FlatWall_2
+    4300010: T_FlatWall_NonTri
+    4300012: D_FlatWall_1
+    4300014: T_FlatWall
+    4300016: Z_Plane
+    4300018: Walless_1_Btm
+    4300020: Walless_1_Top
+    4300022: Walless_1
+    4300024: Corridor.001
+    4300026: O_Corridor
+    4300028: CWallPie.001
+    4300030: O_CWallPie
+    4300032: CWall.001
+    4300034: O_CWall
+    4300036: O_Rock07.V03
+    4300038: O_Rock07.V02
+    4300040: O_Rock07.V01
+    4300042: Vine
+    4300044: T_EdgeWall_1
+    4300046: Z_OldRoof
+    4300048: O_Rock06
+    4300050: O_Rock05
+    4300052: O_Rock04
+    4300054: O_Rock03
+    4300056: O_Rock07
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 7fcc2c5d8b39ad04f99a2298e5c6a5e9, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
