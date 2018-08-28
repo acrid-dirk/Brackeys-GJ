@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc27212762f2d0b42ba2965d07ef27e1
+guid: 963043276cf19f84fb39b9200e2c557f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere
+    4300000: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -45,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

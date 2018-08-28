@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc27212762f2d0b42ba2965d07ef27e1
+guid: d771eaf324275c047a3fe294c41c0ecb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere
+    4300000: O_Rock05
   externalObjects:
   - first:
       type: UnityEngine:Material
