@@ -8,31 +8,84 @@ ModelImporter:
     100004: Goggles
     100006: LeatherCap
     100008: //RootNode
+    100010: Backpack
+    100012: Belt
+    100014: Scarf
     400000: Body
     400002: Face
     400004: Goggles
     400006: LeatherCap
     400008: //RootNode
+    400010: Backpack
+    400012: Belt
+    400014: Scarf
     2100000: Material_004
     2100002: Material_003
     2100004: Material_002
     2100006: Material_001
+    2100008: Material_006
+    2100010: Material_005
+    2100012: Material
     2300000: Body
     2300002: Face
     2300004: Goggles
     2300006: LeatherCap
+    2300008: Backpack
+    2300010: Belt
+    2300012: Scarf
     3300000: Body
     3300002: Face
     3300004: Goggles
     3300006: LeatherCap
+    3300008: Backpack
+    3300010: Belt
+    3300012: Scarf
     4300000: Face
     4300002: Goggles
     4300004: LeatherCap
     4300006: Body
+    4300008: Backpack
+    4300010: Belt
+    4300012: Scarf
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 28fc1a95d48cc8a4991ef69ce98d4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 28fc1a95d48cc8a4991ef69ce98d4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 28fc1a95d48cc8a4991ef69ce98d4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: 28fc1a95d48cc8a4991ef69ce98d4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: b607f1eff18468740a10ec5044d28055, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_005
+    second: {fileID: 2100000, guid: 28fc1a95d48cc8a4991ef69ce98d4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_006
+    second: {fileID: 2100000, guid: 71061f87847128f449b58dc0eaa0bc68, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -83,7 +136,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.1
+    previousCalculatedGlobalScale: 0.25
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
