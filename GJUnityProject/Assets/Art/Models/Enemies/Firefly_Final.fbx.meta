@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22d6d7bf3784aeb47977829a3590f356
+guid: 76a43f04b77b3714cb7e147734d8d4e3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -15,13 +15,13 @@ ModelImporter:
     100018: B_Leg_Final
     100020: Body
     100022: Camera
-    100024: Carapace
-    100026: //RootNode
-    100028: Lamp
-    100030: Leg_Back
-    100032: Leg_Front
-    100034: Leg_Mid
-    100036: Wings
+    100024: F_Body
+    100026: F_Carapace
+    100028: F_Leg_Back
+    100030: F_Leg_Front
+    100032: F_Leg_Mid
+    100034: F_Wings
+    100036: //RootNode
     400000: Antenna
     400002: B_Antenna
     400004: B_Body
@@ -34,13 +34,13 @@ ModelImporter:
     400018: B_Leg_Final
     400020: Body
     400022: Camera
-    400024: Carapace
-    400026: //RootNode
-    400028: Lamp
-    400030: Leg_Back
-    400032: Leg_Front
-    400034: Leg_Mid
-    400036: Wings
+    400024: F_Body
+    400026: F_Carapace
+    400028: F_Leg_Back
+    400030: F_Leg_Front
+    400032: F_Leg_Mid
+    400034: F_Wings
+    400036: //RootNode
     2000000: Camera
     2100000: No Name
     2300000: Antenna
@@ -54,11 +54,13 @@ ModelImporter:
     2300016: B_Leg
     2300018: B_Leg_Final
     2300020: Body
-    2300022: Carapace
-    2300024: Leg_Back
-    2300026: Leg_Front
-    2300028: Leg_Mid
-    2300030: Wings
+    2300022: F_Body
+    2300024: F_Carapace
+    2300026: F_Leg_Back
+    2300028: F_Leg_Front
+    2300030: F_Leg_Mid
+    2300032: F_Wings
+    2300034: //RootNode
     3300000: Antenna
     3300002: B_Antenna
     3300004: B_Body
@@ -70,34 +72,36 @@ ModelImporter:
     3300016: B_Leg
     3300018: B_Leg_Final
     3300020: Body
-    3300022: Carapace
-    3300024: Leg_Back
-    3300026: Leg_Front
-    3300028: Leg_Mid
-    3300030: Wings
-    4300000: Leg_Back
-    4300002: Leg_Mid
-    4300004: B_Leg_Final
-    4300006: B_Body_Final
-    4300008: B_Carapace_Final
-    4300010: Body
-    4300012: B_Body_2
-    4300014: B_Leg
-    4300016: B_Carapace_2
-    4300018: B_Antenna
-    4300020: B_Body
-    4300022: B_Carapace_1
-    4300024: Carapace
-    4300026: Antenna
-    4300028: Leg_Front
-    4300030: Wings
-    10800000: Lamp
+    3300022: F_Body
+    3300024: F_Carapace
+    3300026: F_Leg_Back
+    3300028: F_Leg_Front
+    3300030: F_Leg_Mid
+    3300032: F_Wings
+    3300034: //RootNode
+    4300000: F_Wings
+    4300002: F_Leg_Back
+    4300004: F_Leg_Mid
+    4300006: B_Leg_Final
+    4300008: B_Body_Final
+    4300010: B_Carapace_Final
+    4300012: F_Body
+    4300014: B_Body_2
+    4300016: B_Leg
+    4300018: B_Carapace_2
+    4300020: B_Antenna
+    4300022: B_Body
+    4300024: B_Carapace_1
+    4300026: F_Carapace
+    4300028: Antenna
+    4300030: F_Leg_Front
+    4300032: Body
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: fc961a61e44814c4dbf39a322d8d73af, type: 2}
+    second: {fileID: 2100000, guid: 76f786a1603133a4998d817a79e114d8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
