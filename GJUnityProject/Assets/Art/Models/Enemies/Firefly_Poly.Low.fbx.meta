@@ -21,6 +21,7 @@ ModelImporter:
     100030: Leg_Back
     100032: Leg_Front
     100034: Leg_Mid
+    100036: Wings
     400000: Antenna
     400002: B_Antenna
     400004: B_Body
@@ -39,6 +40,7 @@ ModelImporter:
     400030: Leg_Back
     400032: Leg_Front
     400034: Leg_Mid
+    400036: Wings
     2000000: Camera
     2100000: No Name
     2300000: Antenna
@@ -56,6 +58,7 @@ ModelImporter:
     2300024: Leg_Back
     2300026: Leg_Front
     2300028: Leg_Mid
+    2300030: Wings
     3300000: Antenna
     3300002: B_Antenna
     3300004: B_Body
@@ -71,6 +74,7 @@ ModelImporter:
     3300024: Leg_Back
     3300026: Leg_Front
     3300028: Leg_Mid
+    3300030: Wings
     4300000: Leg_Back
     4300002: Leg_Mid
     4300004: B_Leg_Final
@@ -86,6 +90,7 @@ ModelImporter:
     4300024: Carapace
     4300026: Antenna
     4300028: Leg_Front
+    4300030: Wings
     10800000: Lamp
   externalObjects:
   - first:
