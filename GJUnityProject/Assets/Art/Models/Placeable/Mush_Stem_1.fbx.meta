@@ -1,10 +1,20 @@
 fileFormatVersion: 2
-guid: 1477cce50389a534595e58fa85ac5ea0
+guid: 023f7179f85f63144a913db1db5b62e8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Stem1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ba3f383c398040f4ba5ed4b125c06168, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
