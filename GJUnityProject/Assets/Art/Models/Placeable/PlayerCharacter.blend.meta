@@ -11,6 +11,61 @@ ModelImporter:
     100010: Backpack
     100012: Belt
     100014: Scarf
+    100016: Armature
+    100018: ArmLower_L
+    100020: ArmLower_R
+    100022: ArmUpper_L
+    100024: ArmUpper_R
+    100026: Back
+    100028: Bone_003
+    100030: Bone_004
+    100032: Foot_L
+    100034: Foot_R
+    100036: Hand_L
+    100038: Hand_R
+    100040: Hip_L
+    100042: Hip_R
+    100044: LegLower_L
+    100046: LegLower_R
+    100048: LegUpper_L
+    100050: LegUpper_R
+    100052: LittleFinger1_L
+    100054: LittleFinger1_R
+    100056: LittleFinger2_L
+    100058: LittleFinger2_R
+    100060: LittleFinger3_L
+    100062: LittleFinger3_R
+    100064: MiddleFinger1_L
+    100066: MiddleFinger1_R
+    100068: MiddleFinger2_L
+    100070: MiddleFinger2_R
+    100072: MiddleFinger3_L
+    100074: MiddleFinger3_R
+    100076: PointerFinger1_L
+    100078: PointerFinger1_R
+    100080: PointerFinger2_L
+    100082: PointerFinger2_R
+    100084: PointerFinger3_L
+    100086: PointerFinger3_R
+    100088: RingFinger1_L
+    100090: RingFinger1_R
+    100092: RingFinger2_L
+    100094: RingFinger2_R
+    100096: RingFinger3_L
+    100098: RingFinger3_R
+    100100: Root
+    100102: Should_L
+    100104: Should_R
+    100106: SpineLower
+    100108: SpineUpper
+    100110: Thumb1_L
+    100112: Thumb1_R
+    100114: Thumb2_L
+    100116: Thumb2_R
+    100118: Thumb3_L
+    100120: Thumb3_R
+    100122: Toe_L
+    100124: Toe_R
     400000: Body
     400002: Face
     400004: Goggles
@@ -19,6 +74,61 @@ ModelImporter:
     400010: Backpack
     400012: Belt
     400014: Scarf
+    400016: Armature
+    400018: ArmLower_L
+    400020: ArmLower_R
+    400022: ArmUpper_L
+    400024: ArmUpper_R
+    400026: Back
+    400028: Bone_003
+    400030: Bone_004
+    400032: Foot_L
+    400034: Foot_R
+    400036: Hand_L
+    400038: Hand_R
+    400040: Hip_L
+    400042: Hip_R
+    400044: LegLower_L
+    400046: LegLower_R
+    400048: LegUpper_L
+    400050: LegUpper_R
+    400052: LittleFinger1_L
+    400054: LittleFinger1_R
+    400056: LittleFinger2_L
+    400058: LittleFinger2_R
+    400060: LittleFinger3_L
+    400062: LittleFinger3_R
+    400064: MiddleFinger1_L
+    400066: MiddleFinger1_R
+    400068: MiddleFinger2_L
+    400070: MiddleFinger2_R
+    400072: MiddleFinger3_L
+    400074: MiddleFinger3_R
+    400076: PointerFinger1_L
+    400078: PointerFinger1_R
+    400080: PointerFinger2_L
+    400082: PointerFinger2_R
+    400084: PointerFinger3_L
+    400086: PointerFinger3_R
+    400088: RingFinger1_L
+    400090: RingFinger1_R
+    400092: RingFinger2_L
+    400094: RingFinger2_R
+    400096: RingFinger3_L
+    400098: RingFinger3_R
+    400100: Root
+    400102: Should_L
+    400104: Should_R
+    400106: SpineLower
+    400108: SpineUpper
+    400110: Thumb1_L
+    400112: Thumb1_R
+    400114: Thumb2_L
+    400116: Thumb2_R
+    400118: Thumb3_L
+    400120: Thumb3_R
+    400122: Toe_L
+    400124: Toe_R
     2100000: Material_004
     2100002: Material_003
     2100004: Material_002
@@ -49,6 +159,12 @@ ModelImporter:
     4300012: Scarf
     7400000: Default Take
     9500000: //RootNode
+    13700000: Backpack
+    13700002: Belt
+    13700004: Body
+    13700006: Face
+    13700008: Goggles
+    13700010: LeatherCap
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
