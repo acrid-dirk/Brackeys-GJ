@@ -11,6 +11,7 @@ public class AIFly : MonoBehaviour {
 	[SerializeField] AIWaypoint patrolPointOne;
 	[SerializeField] AIWaypoint patrolPointTwo;
 	[Header("Flying Variables")]
+	[SerializeField] float rotationSpeed = 15f;
 	[SerializeField] float flyingSpeed = 5;
 	[SerializeField] float checkDistance = 0.5f;
 	[Range(0, 100)]
@@ -64,12 +65,14 @@ public class AIFly : MonoBehaviour {
 				}
 			}else if(direction == pathDirection.Forward){
 				// If we should be moving forward down the waypoints, make us look at the front one
-				transform.LookAt(GetClosestWaypoint(transform.position).frontWaypoint.transform);
+				Quaternion targetRotation = Quaternion.LookRotation(GetClosestWaypoint(transform.position).frontWaypoint.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 				// Move us towards the front waypoint
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}else if(direction == pathDirection.Backward){
 				// We should be moving backwards down the waypoints, same thing as above.
-				transform.LookAt(GetClosestWaypoint(transform.position).backWaypoint.transform);
+				Quaternion targetRotation = Quaternion.LookRotation(GetClosestWaypoint(transform.position).backWaypoint.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}
 		}else if(aiState == characterStates.Idle){
@@ -84,7 +87,8 @@ public class AIFly : MonoBehaviour {
 			// If the direction is none then just go directly to player
 			if(direction == pathDirection.None){
 				// Look at player.
-				transform.LookAt(player.position);
+				Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 				// Go towards them
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 				if(Vector3.Distance(transform.position, player.position) <= checkDistance){
@@ -94,10 +98,12 @@ public class AIFly : MonoBehaviour {
 				}
 			}else if(direction == pathDirection.Forward){
 				// We are targetting the player but theres a closer waypoint, so lets move towards that waypoint.
-				transform.LookAt(GetClosestWaypoint(transform.position).frontWaypoint.transform);
+				Quaternion targetRotation = Quaternion.LookRotation(GetClosestWaypoint(transform.position).frontWaypoint.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}else if(direction == pathDirection.Backward){
-				transform.LookAt(GetClosestWaypoint(transform.position).backWaypoint.transform);
+				Quaternion targetRotation = Quaternion.LookRotation(GetClosestWaypoint(transform.position).backWaypoint.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}
 		}
