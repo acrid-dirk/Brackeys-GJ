@@ -8,7 +8,6 @@ public enum pathDirection { Forward, Backward, None, Player }
 
 public class AIFly : MonoBehaviour {
 
-	// The AI will not pathfind these waypoints (yet?) just because of time constraint.
 	[SerializeField] AIWaypoint patrolPointOne;
 	[SerializeField] AIWaypoint patrolPointTwo;
 	[Header("Flying Variables")]
@@ -25,51 +24,76 @@ public class AIFly : MonoBehaviour {
 	float idleTime = -1;
 
 	void Start(){
+		// Set the default patrol to just the first point.
 		currentPatrol = patrolPointOne;
+		// Assign the player
 		player = GameObject.FindWithTag("Player").transform.root;
 	}
 
 	void Update(){
+		// Check our current state.
 		if(aiState == characterStates.Flying){
+			// If we are flying get our direction towards our wanted patrol
 			pathDirection direction = GetDirection(currentPatrol, GetClosestWaypoint(transform.position));
+			// If we dont have to go to a waypoint, go directly to the waypoint.
 			if(direction == pathDirection.None){
+				// Look at the waypoint
 				transform.LookAt(currentPatrol.transform);
+				// Make us move forward at our flying speed.
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
+				// Check if we are in the checking distance/
 				if(Vector3.Distance(transform.position, currentPatrol.transform.position) <= checkDistance){
+					// Do a random.range between 0 and 100 and compare it to our idle chance
 					int idleCheck = Random.Range(0, 100);
 					if(idleCheck <= idleChance){
+						// Set the idle time so we know when to un-idle
 						idleTime = Time.time + Random.Range(minIdleTime, maxIdleTime);
 					}else{
+						// We didnt get idle so just keep flying
 						idleTime = 0;
 					}
+					// Check if our patrol was one of the points
 					if(currentPatrol == patrolPointOne){
 						currentPatrol = patrolPointTwo;
 					}else{
+						// If not just set it to first one.
 						currentPatrol = patrolPointOne;
 					}
+					// Set us to idle
 					aiState = characterStates.Idle;
 				}
 			}else if(direction == pathDirection.Forward){
+				// If we should be moving forward down the waypoints, make us look at the front one
 				transform.LookAt(GetClosestWaypoint(transform.position).frontWaypoint.transform);
+				// Move us towards the front waypoint
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}else if(direction == pathDirection.Backward){
+				// We should be moving backwards down the waypoints, same thing as above.
 				transform.LookAt(GetClosestWaypoint(transform.position).backWaypoint.transform);
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}
 		}else if(aiState == characterStates.Idle){
+			// Check if were idling. If we are check if we have passed our idle timer.
 			if(Time.time >= idleTime){
 				aiState = characterStates.Flying;
 			}
 		}else if(aiState == characterStates.AITargeting){
+			// AITargeting is when the player is spotted.
+			// Get the waypoint direction.
 			pathDirection direction = GetDirection(GetClosestWaypoint(player.position), GetClosestWaypoint(transform.position));
+			// If the direction is none then just go directly to player
 			if(direction == pathDirection.None){
+				// Look at player.
 				transform.LookAt(player.position);
+				// Go towards them
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 				if(Vector3.Distance(transform.position, player.position) <= checkDistance){
+					// If we are within a small radius of the player, 'kill' them
 					// END GAME
 					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 				}
 			}else if(direction == pathDirection.Forward){
+				// We are targetting the player but theres a closer waypoint, so lets move towards that waypoint.
 				transform.LookAt(GetClosestWaypoint(transform.position).frontWaypoint.transform);
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 			}else if(direction == pathDirection.Backward){
@@ -81,6 +105,7 @@ public class AIFly : MonoBehaviour {
 
 	void TriggerDetection(Collider other)
 	{
+		// Called when the 'light' sees a player. Changes us to target the player.
 		if(other.CompareTag("Player")){
 			aiState = characterStates.AITargeting;
 		}
@@ -157,6 +182,8 @@ public class AIFly : MonoBehaviour {
 		return pathDirection.None;
 	}
 
+
+	// Fancy editor stuff.
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.magenta;
