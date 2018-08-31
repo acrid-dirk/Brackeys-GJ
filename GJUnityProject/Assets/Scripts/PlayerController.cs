@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector] public characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
+	float bottledCloudAmt;
 	bool canLand = true;
 	bool mouseLocked = false;
 	
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
-
 		// Do mouse look first.
 		SimulateMouse();
 		LockMouse();
@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour {
 				IdleInput();
 				break;
 			case(characterStates.Flying):
+				if(bottledCloudAmt >= 1){
+					IdleInput();
+				}
 				// Check if our velocity is less than the minimum wanted.
 				if(rb.velocity.magnitude <= minimumVelocity && canLand){
 					characterState = characterStates.Idle;
@@ -75,6 +78,10 @@ public class PlayerController : MonoBehaviour {
 	void IdleInput(){
 		// When the character is 'idle' (Stuck on a wall) let them launch off of it
 		if(Input.GetKeyDown(launchKey)){
+			if(characterState == characterStates.Flying){
+				bottledCloudAmt --;
+				rb.velocity = Vector3.zero;
+			}
 			characterState = characterStates.Flying;
 			rb.AddForce(charCamera.forward * launchPower);
 		}
@@ -99,6 +106,13 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
+		if(other.gameObject.CompareTag("BottledCloud")){
+			bottledCloudAmt ++;
+			other.gameObject.GetComponent<BoxCollider>().enabled = false;
+			other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+			rb.AddForce(other.relativeVelocity);
+			return;
+		}
 		// Kill the player if they touch something deadly, aka light.
 		if(other.gameObject.CompareTag("Death")){
 			// TODO: Add a death screen
