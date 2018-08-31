@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] KeyCode launchKey = KeyCode.Space; // Going to change to unity input later.
 	[Header("Collision Modifiers")]
 	[SerializeField] float bounceModifier = 1.5f;
+	[SerializeField] float launchPadModifier = 2.5f;
 	characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
@@ -100,6 +101,15 @@ public class PlayerController : MonoBehaviour {
 			Vector3 newVelocity = new Vector3(-other.relativeVelocity.x, other.relativeVelocity.y, -other.relativeVelocity.z).normalized;
 			// Apply the force
 			rb.AddForce(newVelocity * launchPower * bounceModifier);
+			// Dont allow us to stop flying.
+			return;
+		}
+		// Check if we have collided with a launch pad
+		if(other.gameObject.CompareTag("LaunchPad")){
+			// Reset our velocity to zero.
+			rb.velocity = Vector3.zero;
+			// Take the normal of our collision and apply force in that direction.
+			rb.AddForce(other.contacts[0].normal * launchPower * launchPadModifier);
 			// Dont allow us to stop flying.
 			return;
 		}
