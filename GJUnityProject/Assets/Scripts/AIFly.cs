@@ -93,8 +93,9 @@ public class AIFly : MonoBehaviour {
 				transform.position += transform.forward * flyingSpeed * Time.deltaTime;
 				if(Vector3.Distance(transform.position, player.position) <= checkDistance){
 					// If we are within a small radius of the player, 'kill' them
-					// END GAME
-					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+					if(!player.GetComponent<PlayerController>().dying){
+						player.GetComponent<PlayerController>().StartCoroutine(player.GetComponent<PlayerController>().Death());
+					}
 				}
 			}else if(direction == pathDirection.Forward){
 				// We are targetting the player but theres a closer waypoint, so lets move towards that waypoint.

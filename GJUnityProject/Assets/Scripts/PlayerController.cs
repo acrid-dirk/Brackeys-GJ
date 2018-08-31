@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	[Header("References")]
 	[SerializeField] Transform charCamera;
+	[SerializeField] Image deathFade;
 	Rigidbody rb;
 
 	[Header("Inputs")]
@@ -27,16 +28,35 @@ public class PlayerController : MonoBehaviour {
 	float bottledCloudAmt;
 	bool canLand = true;
 	bool mouseLocked = false;
+	[HideInInspector]
+	public bool dying = false;
+	bool starting = true;
 	
 	void Awake(){
 		// Cache the rigidbody at awake.
 		rb = GetComponent<Rigidbody>();
+		deathFade.color = new Color(0, 0, 0, 1);
+		Time.timeScale = 1;
 	}
 
 	void Update () {
 		// Do mouse look first.
 		SimulateMouse();
 		LockMouse();
+
+		if(Vector3.Distance(transform.position, Vector3.zero) >= 300){
+			if(!dying){
+				StartCoroutine(Death());
+			}
+		}
+
+		// Black fade effect
+		if(starting){
+			deathFade.color = deathFade.color - new Color(0, 0, 0, 1 * Time.deltaTime);
+			if(deathFade.color.a <= 0){
+				starting = false;
+			}
+		}
 
 		// Switch our states and call the function for each.
 		switch(characterState){
@@ -104,6 +124,18 @@ public class PlayerController : MonoBehaviour {
 		canLand = true;
 	}
 
+	public IEnumerator Death(){
+		dying = true;
+		Time.timeScale = 0.1f;
+		while(true){
+			deathFade.color = deathFade.color + new Color(0, 0, 0, 1 * Time.deltaTime * 5);
+			if(deathFade.color.a >= 1){
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.gameObject.CompareTag("BottledCloud")){
@@ -114,9 +146,8 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 		// Kill the player if they touch something deadly, aka light.
-		if(other.gameObject.CompareTag("Death")){
-			// TODO: Add a death screen
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		if(other.gameObject.CompareTag("Death") && !dying){
+			StartCoroutine(Death());
 		}
 		// Check if we have collided with a bounce pad
 		if(other.gameObject.CompareTag("BouncePad")){
