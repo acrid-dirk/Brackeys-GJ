@@ -10,6 +10,7 @@ public class AIFly : MonoBehaviour {
 
 	[SerializeField] AIWaypoint patrolPointOne;
 	[SerializeField] AIWaypoint patrolPointTwo;
+	[SerializeField] Animator Anim;
 	[Header("Flying Variables")]
 	[SerializeField] float rotationSpeed = 15f;
 	[SerializeField] float flyingSpeed = 5;
@@ -114,6 +115,7 @@ public class AIFly : MonoBehaviour {
 	{
 		// Called when the 'light' sees a player. Changes us to target the player.
 		if(other.CompareTag("Player")){
+			Anim.SetTrigger("StartedChase");
 			aiState = characterStates.AITargeting;
 		}
 	}
