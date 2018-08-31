@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	float yaw = 0;
 	float bottledCloudAmt;
 	bool canLand = true;
-	bool mouseLocked = false;
+	bool mouseLocked = true;
 	[HideInInspector]
 	public bool dying = false;
 	bool starting = true;
@@ -41,7 +41,11 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		// Do mouse look first.
-		SimulateMouse();
+		if(!dying){
+			SimulateMouse();
+		}
+
+
 		LockMouse();
 
 		if(Vector3.Distance(transform.position, Vector3.zero) >= 300){
