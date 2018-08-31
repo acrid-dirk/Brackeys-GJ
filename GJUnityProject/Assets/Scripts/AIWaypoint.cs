@@ -5,8 +5,9 @@ using UnityEngine;
 public class AIWaypoint : MonoBehaviour {
 
 	[Header("Pathfinding Variables")]
-	[SerializeField] AIWaypoint frontWaypoint;
-	[SerializeField] AIWaypoint backWaypoint;
+	// Public so the AIFly.cs script can access these.
+	public AIWaypoint frontWaypoint;
+	public AIWaypoint backWaypoint;
 	float editorTime = 0;
 
 	void OnDrawGizmos()

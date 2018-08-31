@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Enums
-public enum characterStates { Idle, Flying };
+public enum characterStates { Idle, Flying, AITargeting };
 
 public class PlayerController : MonoBehaviour {
 

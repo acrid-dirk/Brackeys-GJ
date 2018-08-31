@@ -9,6 +9,7 @@ TagManager:
   - LaunchPad
   - End
   - Crystal
+  - Waypoint
   layers:
   - Default
   - TransparentFX

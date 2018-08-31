@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 54198809316931272}
   m_Layer: 0
   m_Name: Example Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 136464681225799570}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,6 +236,10 @@ MonoBehaviour:
   mouseSensitivity: 2
   launchPower: 1400
   launchKey: 32
+  minimumVelocity: 0.5
+  bounceModifier: 1.5
+  launchPadModifier: 2.5
+  characterState: 0
 --- !u!136 &136464681225799570
 CapsuleCollider:
   m_ObjectHideFlags: 1
