@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	[Header("Collision Modifiers")]
 	[SerializeField] float bounceModifier = 1.5f;
 	[SerializeField] float launchPadModifier = 2.5f;
-	characterStates characterState = characterStates.Idle;
+	[HideInInspector] public characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
 	bool mouseLocked = false;
