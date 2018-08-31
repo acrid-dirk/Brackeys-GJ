@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Enums
 public enum characterStates { Idle, Flying };
 
-public class ExamplePlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	[Header("References")]
 	[SerializeField] Transform charCamera;
@@ -16,6 +16,8 @@ public class ExamplePlayerController : MonoBehaviour {
 	[SerializeField] float mouseSensitivity = 2f;
 	[SerializeField] float launchPower = 5f;
 	[SerializeField] KeyCode launchKey = KeyCode.Space; // Going to change to unity input later.
+	[Header("Collision Modifiers")]
+	[SerializeField] float bounceModifier = 1.5f;
 	characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
@@ -89,6 +91,17 @@ public class ExamplePlayerController : MonoBehaviour {
 		if(other.gameObject.CompareTag("Death")){
 			// TODO: Add a death screen
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+		// Check if we have collided with a bounce pad
+		if(other.gameObject.CompareTag("BouncePad")){
+			// Reset our velocity to zero.
+			rb.velocity = Vector3.zero;
+			// Create a new vector3 which takes our relative velocity then inverts the x and z axis so it gives a 'bounce' effect.
+			Vector3 newVelocity = new Vector3(-other.relativeVelocity.x, other.relativeVelocity.y, -other.relativeVelocity.z).normalized;
+			// Apply the force
+			rb.AddForce(newVelocity * launchPower * bounceModifier);
+			// Dont allow us to stop flying.
+			return;
 		}
 		// Only remove velocity and set us idle if we are flying
 		if(characterState == characterStates.Flying){

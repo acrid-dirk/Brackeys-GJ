@@ -1,9 +1,58 @@
 fileFormatVersion: 2
-guid: 157b2cd4406ed234a95d20a902ab6332
+guid: 9b19a83b3ff78a64fb372008251ab052
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    2186277476908879412: ImportLogs
+    100000: //RootNode
+    100002: Cube
+    100004: Plane
+    100006: Plane_001
+    100008: Plane_002
+    100010: Plane_003
+    100012: Plane_004
+    100014: Plane_005
+    100016: Plane_006
+    100018: Plane_007
+    400000: //RootNode
+    400002: Cube
+    400004: Plane
+    400006: Plane_001
+    400008: Plane_002
+    400010: Plane_003
+    400012: Plane_004
+    400014: Plane_005
+    400016: Plane_006
+    400018: Plane_007
+    2100000: None__Clover_png
+    2300000: Cube
+    2300002: Plane
+    2300004: Plane_001
+    2300006: Plane_002
+    2300008: Plane_003
+    2300010: Plane_004
+    2300012: Plane_005
+    2300014: Plane_006
+    2300016: Plane_007
+    3300000: Cube
+    3300002: Plane
+    3300004: Plane_001
+    3300006: Plane_002
+    3300008: Plane_003
+    3300010: Plane_004
+    3300012: Plane_005
+    3300014: Plane_006
+    3300016: Plane_007
+    4300000: Plane_003
+    4300002: Cube
+    4300004: Plane
+    4300006: Plane_007
+    4300008: Plane_006
+    4300010: Plane_005
+    4300012: Plane_004
+    4300014: Plane_002
+    4300016: Plane_001
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -56,7 +105,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
