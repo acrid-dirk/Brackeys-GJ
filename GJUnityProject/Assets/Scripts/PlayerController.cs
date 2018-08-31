@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // Enums
 public enum characterStates { Idle, Flying };
@@ -15,13 +16,15 @@ public class PlayerController : MonoBehaviour {
 	[Header("Inputs")]
 	[SerializeField] float mouseSensitivity = 2f;
 	[SerializeField] float launchPower = 5f;
-	[SerializeField] KeyCode launchKey = KeyCode.Space; // Going to change to unity input later.
+	[SerializeField] KeyCode launchKey = KeyCode.Space; // Going to change to unity input later. (???MAYBE???)
+	[SerializeField] float minimumVelocity = 0.5f;
 	[Header("Collision Modifiers")]
 	[SerializeField] float bounceModifier = 1.5f;
 	[SerializeField] float launchPadModifier = 2.5f;
 	[HideInInspector] public characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
+	bool canLand = true;
 	bool mouseLocked = false;
 	
 	void Awake(){
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
+
 		// Do mouse look first.
 		SimulateMouse();
 		LockMouse();
@@ -40,7 +44,10 @@ public class PlayerController : MonoBehaviour {
 				IdleInput();
 				break;
 			case(characterStates.Flying):
-				// Saved for later use.
+				// Check if our velocity is less than the minimum wanted.
+				if(rb.velocity.magnitude <= minimumVelocity && canLand){
+					characterState = characterStates.Idle;
+				}
 				break;
 		}
 	}
@@ -82,8 +89,12 @@ public class PlayerController : MonoBehaviour {
 		pitch = Mathf.Clamp(pitch, -85, 85);
 
 		charCamera.localRotation = Quaternion.Euler(pitch, yaw, 0);
+	}
 
-		Vector3 currentRotation = transform.localEulerAngles;
+	IEnumerator landCooldown(){
+		// This makes it so when touching a bouncepad or launchpad it wont consider it as ground
+		yield return new WaitForSeconds(0.05f);
+		canLand = true;
 	}
 
 	void OnCollisionEnter(Collision other)
@@ -102,8 +113,10 @@ public class PlayerController : MonoBehaviour {
 			// Apply the force
 			rb.AddForce(newVelocity * launchPower * bounceModifier);
 			// Dont allow us to stop flying.
+			canLand = false;
+			StartCoroutine(landCooldown());
 			return;
-		}
+		}else
 		// Check if we have collided with a launch pad
 		if(other.gameObject.CompareTag("LaunchPad")){
 			// Reset our velocity to zero.
@@ -111,10 +124,12 @@ public class PlayerController : MonoBehaviour {
 			// Take the normal of our collision and apply force in that direction.
 			rb.AddForce(other.contacts[0].normal * launchPower * launchPadModifier);
 			// Dont allow us to stop flying.
+			canLand = false;
+			StartCoroutine(landCooldown());
 			return;
-		}
+		}else
 		// Only remove velocity and set us idle if we are flying
-		if(characterState == characterStates.Flying){
+		if(characterState == characterStates.Flying && canLand){
 			rb.velocity = Vector3.zero;
 			characterState = characterStates.Idle;
 		}
