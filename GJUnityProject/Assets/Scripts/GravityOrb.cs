@@ -22,9 +22,7 @@ public class GravityOrb : MonoBehaviour {
 		if(PC != null){
 			// Check if we are in the radius and we are flying.
 			if(Vector3.Distance(transform.position, PC.transform.position) <= effectRadius && PC.characterState == characterStates.Flying){
-				print("PULLING");
 				// Get the direction towards the gravity orb (This gameobject) and apply force.
-				
 				PC.GetComponent<Rigidbody>().AddForce((transform.position - PC.transform.position).normalized * pullModifer * Time.deltaTime);
 			}
 		}
