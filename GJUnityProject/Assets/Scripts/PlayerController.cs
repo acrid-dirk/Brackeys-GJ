@@ -166,16 +166,19 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collision other)
 	{
 		if(other.gameObject.CompareTag("BottledCloud")){
 			bottledCloudAmt = 1;
 			bottledCloud.SetActive(true);
-			other.gameObject.GetComponent<BoxCollider>().enabled = false;
-			other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+			other.gameObject.SetActive(false);
 			rb.AddForce(other.relativeVelocity);
-			return;
 		}
+	}
+
+
+	void OnCollisionEnter(Collision other)
+	{
 		// Kill the player if they touch something deadly, aka light.
 		if(other.gameObject.CompareTag("Death") && !dying){
 			StartCoroutine(Death());
@@ -187,7 +190,12 @@ public class PlayerController : MonoBehaviour {
 			// Create a new vector3 which takes our relative velocity then inverts the x and z axis so it gives a 'bounce' effect.
 			Vector3 newVelocity = new Vector3(-other.relativeVelocity.x, other.relativeVelocity.y, -other.relativeVelocity.z).normalized;
 			// Apply the force
-			rb.AddForce(newVelocity * launchPower * bounceModifier);
+			if(other.gameObject.GetComponent<BouncePad>()){
+				rb.AddForce(newVelocity * other.gameObject.GetComponent<BouncePad>().bounceForce);
+			}else{
+				rb.AddForce(newVelocity * launchPower * bounceModifier);
+			}
+			
 			// Dont allow us to stop flying.
 			canLand = false;
 			StartCoroutine(landCooldown());
