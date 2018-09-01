@@ -8,6 +8,7 @@ public enum AIState { Patrol, Targetting, Idle }
 
 public class AIFly : MonoBehaviour {
 
+	[SerializeField] bool standsStill = false;
 	[SerializeField] Transform patrolPointOne;
 	[SerializeField] Transform patrolPointTwo;
 	[SerializeField] Animator Anim;
@@ -39,7 +40,11 @@ public class AIFly : MonoBehaviour {
 				Idle();
 				break;
 			case(AIState.Patrol):
-				Patrolling();
+				if(!standsStill){
+					Patrolling();
+				}else{
+					state = AIState.Idle;
+				}
 				break;
 			case(AIState.Targetting):
 				TargettingPlayer();
@@ -108,8 +113,20 @@ public class AIFly : MonoBehaviour {
 	}
 
 	void Idle(){
-		if(Time.time >= idleTime){
-			state = AIState.Patrol;
+		if(!standsStill){
+			if(Time.time >= idleTime){
+				state = AIState.Patrol;
+			}
+		}else{
+			// Constantly make sure we see the player, if we dont, give up and go back to patrolling
+			RaycastHit hit;
+			if(Physics.Raycast(transform.position, (player.position - transform.position).normalized, out hit, Mathf.Infinity)){
+				// Check if we hit something other than the player
+				if(hit.transform.root.CompareTag("Player")){
+					// Set us to go back to patrolling.
+					state = AIState.Targetting;
+				}
+			}
 		}
 	}
 
