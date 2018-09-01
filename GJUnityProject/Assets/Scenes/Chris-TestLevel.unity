@@ -1494,15 +1494,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -21.69
+      value: -21.8
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -43.82
+      value: -44.4
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 37.49
+      value: 38.1
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1526,15 +1526,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalScale.x
-      value: 3.425793
+      value: 4.2161236
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.1998448
+      value: 1.6380002
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalScale.z
-      value: 3.425793
+      value: 4.2161236
       objectReference: {fileID: 0}
     - target: {fileID: 4953871200743676, guid: 278bc2a6a37c7c542b86c20fe81fa046, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4949,11 +4949,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4970917241526018, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.65
+      value: -7.29
       objectReference: {fileID: 0}
     - target: {fileID: 4970917241526018, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 4970917241526018, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5040,6 +5040,21 @@ Prefab:
       propertyPath: endPanel
       value: 
       objectReference: {fileID: 1154066868}
+    - target: {fileID: 114194337292372230, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: launchPower
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194337292372230, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: bounceModifier
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194337292372230, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: launchPadModifier
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
   m_IsPrefabAsset: 0
