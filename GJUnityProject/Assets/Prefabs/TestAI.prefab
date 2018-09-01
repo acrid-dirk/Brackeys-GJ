@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 1271628471780108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.3, y: -0.6, z: 0}
-  m_LocalScale: {x: 66.68657, y: 66.68657, z: 66.68657}
+  m_LocalScale: {x: 80, y: 80, z: 80}
   m_Children: []
   m_Father: {fileID: 4890759387892406}
   m_RootOrder: 0
@@ -330,7 +330,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407831475558588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.33, y: -51.17, z: 20.83}
+  m_LocalPosition: {x: 6.425028, y: -0.746088, z: -2.0023384}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4502873256721054}
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5defae5f8ea49141b2e64f7ff41b1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standsStill: 0
+  standsStill: 1
   patrolPointOne: {fileID: 0}
   patrolPointTwo: {fileID: 0}
   Anim: {fileID: 95587152502624048}

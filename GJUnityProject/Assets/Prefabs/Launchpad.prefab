@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4436592352725046}
   - component: {fileID: 33176488617444140}
   - component: {fileID: 23826593497979386}
+  - component: {fileID: 65669744489724132}
   m_Layer: 0
   m_Name: LaunchSurface
   m_TagString: LaunchPad
@@ -68,15 +69,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121564829775672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.275, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.80854714, y: 0.051103767, z: 0.044815637, w: 0.5844926}
+  m_LocalPosition: {x: -17.03, y: -11.87, z: -4.26}
+  m_LocalScale: {x: 0.48936, y: 0.48936, z: 0.48936}
   m_Children:
   - {fileID: 4549020210571576}
   - {fileID: 4436592352725046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -108.239, y: 2.3309937, z: 5.546997}
 --- !u!4 &4436592352725046
 Transform:
   m_ObjectHideFlags: 1
@@ -201,6 +202,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 09071fb50e8e72c4392fd276dd650a9f, type: 3}
+--- !u!65 &65669744489724132
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727936453651314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.000002, z: 1.0000004}
+  m_Center: {x: 0, y: 0.000015258789, z: 0.00000047683716}
 --- !u!95 &95845510946919890
 Animator:
   serializedVersion: 3

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chris-TestLevel.unity
     guid: 07d28aa8efacc3e49985f236cec7cd21
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: b9540bd38e4760944810939f29e6f041
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
