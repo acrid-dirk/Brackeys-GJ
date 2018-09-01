@@ -133,6 +133,8 @@ public class PlayerController : MonoBehaviour {
 			if(characterState == characterStates.Flying){
 				doubleJumped = true;
 				rb.velocity = Vector3.zero;
+				canLand = false;
+				StartCoroutine(landCooldown());
 			}
 			characterState = characterStates.Flying;
 			rb.AddForce(charCamera.forward * launchPower);
