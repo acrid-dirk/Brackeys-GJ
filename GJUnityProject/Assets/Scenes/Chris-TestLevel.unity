@@ -769,46 +769,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 4808251490638450, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4808251490638450, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 0.6698078
-      objectReference: {fileID: 0}
-    - target: {fileID: 4808251490638450, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -146.828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4808251490638450, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -246.873
-      objectReference: {fileID: 0}
-    - target: {fileID: 4808251490638450, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 352.506
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Lightmapping
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8478f8553e9a0f64ab62b6765650abe4, type: 2}
   m_IsPrefabAsset: 0
