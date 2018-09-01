@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23433762645811854}
   m_Layer: 0
   m_Name: Bottle
-  m_TagString: Untagged
+  m_TagString: BottledCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23220114837727716}
   m_Layer: 0
   m_Name: cork
-  m_TagString: Untagged
+  m_TagString: BottledCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 23281091069901776}
   m_Layer: 0
   m_Name: Cloud
-  m_TagString: Untagged
+  m_TagString: BottledCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,12 +70,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586602383309200}
-  - component: {fileID: 95320537174784126}
-  - component: {fileID: 123950324556060786}
   - component: {fileID: 108463648509448428}
+  - component: {fileID: 65461649754803726}
   m_Layer: 0
   m_Name: CloudInABottle
-  m_TagString: Untagged
+  m_TagString: BottledCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,9 +89,10 @@ GameObject:
   - component: {fileID: 4091511783037534}
   - component: {fileID: 33403403814696390}
   - component: {fileID: 23629034362531644}
+  - component: {fileID: 123491709489991404}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: BottledCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +129,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381407110575692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalRotation: {x: 0.1707267, y: -0.046391524, z: -0.25808495, w: 0.9497855}
+  m_LocalPosition: {x: -6.0505505, y: -54.87, z: 9.336528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4972771777332718}
@@ -139,7 +139,7 @@ Transform:
   - {fileID: 4001505273258936}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.479, y: -10.648001, z: -32.045002}
 --- !u!4 &4885834674925774
 Transform:
   m_ObjectHideFlags: 1
@@ -334,24 +334,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277086389906820}
   m_Mesh: {fileID: 4300004, guid: 9d7e90c393d8cfd4cbdac8754252e199, type: 3}
---- !u!95 &95320537174784126
-Animator:
-  serializedVersion: 3
+--- !u!65 &65461649754803726
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381407110575692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9d7e90c393d8cfd4cbdac8754252e199, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108463648509448428
 Light:
   m_ObjectHideFlags: 1
@@ -362,8 +356,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.68235296, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 15
+  m_Intensity: 4
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -389,12 +383,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!123 &123950324556060786
+--- !u!123 &123491709489991404
 LensFlare:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1381407110575692}
+  m_GameObject: {fileID: 1958071128210500}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: 1221d7f1b1ead3246b10e44868665a97, type: 2}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0}
