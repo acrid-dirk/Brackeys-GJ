@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
+		if(bottledCloudAmt > 0){
+			bottledCloud.SetActive(true);
+		}else{
+			bottledCloud.SetActive(false);
+		}
 
 		// Do mouse look first.
 		if(!dying){
@@ -166,14 +171,9 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collision other)
+	public void GetCloudBottle()
 	{
-		if(other.gameObject.CompareTag("BottledCloud")){
-			bottledCloudAmt = 1;
-			bottledCloud.SetActive(true);
-			other.gameObject.SetActive(false);
-			rb.AddForce(other.relativeVelocity);
-		}
+		bottledCloudAmt++;
 	}
 
 
