@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LightCrystal : MonoBehaviour {
+
+	[SerializeField] GameObject[] enabledWithoutCrystal;
+	[SerializeField] GameObject[] enabledWithCrystal;
 
 	public float textUpTimer;
 
@@ -18,6 +22,7 @@ public class LightCrystal : MonoBehaviour {
 	void Start () {
 
 	}
+
 	void Update () {
 		textUpTimer += Time.fixedDeltaTime;
 		crystal.transform.Rotate(Vector3.up * Time.deltaTime * 10);
@@ -26,6 +31,22 @@ public class LightCrystal : MonoBehaviour {
 			crystalAquiredText.text = "Light crystal aquired";
 		}else{
 			crystalAquiredText.text = "";
+		}
+
+		if(hasCrystal){
+			for(int i = 0; i < enabledWithCrystal.Length; i++){
+				enabledWithCrystal[i].SetActive(true);
+			}
+			for(int i = 0; i < enabledWithoutCrystal.Length; i++){
+				enabledWithoutCrystal[i].SetActive(false);
+			}
+		}else{
+			for(int i = 0; i < enabledWithCrystal.Length; i++){
+				enabledWithCrystal[i].SetActive(false);
+			}
+			for(int i = 0; i < enabledWithoutCrystal.Length; i++){
+				enabledWithoutCrystal[i].SetActive(true);
+			}
 		}
 
 	}
@@ -38,6 +59,7 @@ public class LightCrystal : MonoBehaviour {
 		if(other.collider.tag == "End" && hasCrystal){
 			crystalAquiredText.text = "";
 			endPanel.SetActive(true);
+			SceneManager.LoadScene(2); // Should be credits scene that gets loaded.
 		}
 	}
 }
