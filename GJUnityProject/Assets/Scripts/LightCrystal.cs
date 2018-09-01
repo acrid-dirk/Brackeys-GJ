@@ -15,8 +15,6 @@ public class LightCrystal : MonoBehaviour {
 
 	public GameObject crystal;
 	public GameObject endPanel;
-	public Transform crystalTransform;
-
 	public Text crystalAquiredText;
 
 	void Start () {
@@ -25,7 +23,7 @@ public class LightCrystal : MonoBehaviour {
 
 	void Update () {
 		textUpTimer += Time.fixedDeltaTime;
-		crystal.transform.Rotate(Vector3.up * Time.deltaTime * 10);
+		//crystal.transform.Rotate(Vector3.up * Time.deltaTime * 10);
 
 		if(hasCrystal && textUpTimer <= 2){
 			crystalAquiredText.text = "Light crystal aquired";
@@ -63,8 +61,9 @@ public class LightCrystal : MonoBehaviour {
 	public void OnCollisionEnter(Collision other){
 		if(other.collider.tag == "End" && hasCrystal){
 			crystalAquiredText.text = "";
-			endPanel.SetActive(true);
 			SceneManager.LoadScene(2); // Should be credits scene that gets loaded.
+			endPanel.SetActive(true);
+			
 		}
 	}
 }
