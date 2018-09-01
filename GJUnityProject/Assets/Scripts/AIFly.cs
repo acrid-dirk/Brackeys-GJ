@@ -27,6 +27,7 @@ public class AIFly : MonoBehaviour {
 	float idleTime = -1;
 
 	void Start(){
+		state = AIState.Idle;
 		// Set the default patrol to just the first point.
 		currentPatrol = patrolPointOne;
 		// Assign the player
