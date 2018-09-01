@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
 	[Header("References")]
 	[SerializeField] Transform charCamera;
 	[SerializeField] Image deathFade;
+	[SerializeField] GameObject bottledCloud;
+	[SerializeField] GameObject deathPanel;
 	Rigidbody rb;
 
 	[Header("Inputs")]
@@ -37,6 +39,8 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		deathFade.color = new Color(0, 0, 0, 1);
 		Time.timeScale = 1;
+		mouseLocked = true;
+		deathPanel.SetActive(false);
 	}
 
 	void Update () {
@@ -81,14 +85,14 @@ public class PlayerController : MonoBehaviour {
 
 	void LockMouse(){
 		// Check if the user pressed the left mouse button in game.
-		if(Input.GetKeyDown(KeyCode.Mouse0)){
+		//if(Input.GetKeyDown(KeyCode.Mouse0)){
 			// Lock the mouse if they did.
-			mouseLocked = true;
-		}
-		else if(Input.GetKeyDown(KeyCode.Escape)){
+		//	mouseLocked = true;
+		//}
+		//else if(Input.GetKeyDown(KeyCode.Escape)){
 			// If the user pressed escape than unlock the mouse.
-			mouseLocked = false;
-		}
+		//	mouseLocked = false;
+		//}
 
 		if(mouseLocked){
 			Cursor.lockState = CursorLockMode.Locked;
@@ -104,6 +108,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(launchKey)){
 			if(characterState == characterStates.Flying){
 				bottledCloudAmt --;
+				bottledCloud.SetActive(false);
 				rb.velocity = Vector3.zero;
 			}
 			characterState = characterStates.Flying;
@@ -134,7 +139,11 @@ public class PlayerController : MonoBehaviour {
 		while(true){
 			deathFade.color = deathFade.color + new Color(0, 0, 0, 1 * Time.deltaTime * 5);
 			if(deathFade.color.a >= 1){
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+				//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+				mouseLocked = false;
+				deathPanel.SetActive(true);
+			}else{
+				deathPanel.SetActive(false);
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -143,7 +152,8 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.gameObject.CompareTag("BottledCloud")){
-			bottledCloudAmt ++;
+			bottledCloudAmt = 1;
+			bottledCloud.SetActive(true);
 			other.gameObject.GetComponent<BoxCollider>().enabled = false;
 			other.gameObject.GetComponent<MeshRenderer>().enabled = false;
 			rb.AddForce(other.relativeVelocity);
@@ -182,5 +192,13 @@ public class PlayerController : MonoBehaviour {
 			rb.velocity = Vector3.zero;
 			characterState = characterStates.Idle;
 		}
+	}
+	public void Retry(){
+		if(deathFade.color.a >= 1){
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+	}
+	public void Quit(){
+		Application.Quit();
 	}
 }

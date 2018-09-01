@@ -49,4 +49,7 @@ public class MainMenu : MonoBehaviour {
 		currentPanel.SetActive(false);
 		mainPanel.SetActive(true);
 	}
+	public void Quit(){
+		Application.Quit();
+	}
 }
