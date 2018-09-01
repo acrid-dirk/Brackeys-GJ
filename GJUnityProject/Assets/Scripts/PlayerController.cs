@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector] public characterStates characterState = characterStates.Idle;
 	float pitch = 0;
 	float yaw = 0;
-	float bottledCloudAmt;
+	bool hasBottle = false;
+	bool doubleJumped = false;
 	bool canLand = true;
 	bool mouseLocked = true;
 	[HideInInspector]
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
-		if(bottledCloudAmt > 0){
+		if(hasBottle){
 			bottledCloud.SetActive(true);
 		}else{
 			bottledCloud.SetActive(false);
@@ -83,10 +84,11 @@ public class PlayerController : MonoBehaviour {
 		// Switch our states and call the function for each.
 		switch(characterState){
 			case(characterStates.Idle):
+				doubleJumped = false;
 				IdleInput();
 				break;
 			case(characterStates.Flying):
-				if(bottledCloudAmt >= 1){
+				if(hasBottle && !doubleJumped){
 					IdleInput();
 				}
 				// Check if our velocity is less than the minimum wanted.
@@ -129,8 +131,7 @@ public class PlayerController : MonoBehaviour {
 		// When the character is 'idle' (Stuck on a wall) let them launch off of it
 		if(Input.GetKeyDown(launchKey)){
 			if(characterState == characterStates.Flying){
-				bottledCloudAmt --;
-				bottledCloud.SetActive(false);
+				doubleJumped = true;
 				rb.velocity = Vector3.zero;
 			}
 			characterState = characterStates.Flying;
@@ -173,7 +174,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void GetCloudBottle()
 	{
-		bottledCloudAmt++;
+		hasBottle = true;
 	}
 
 
