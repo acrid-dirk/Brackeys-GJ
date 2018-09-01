@@ -240,7 +240,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 47839269}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5897,6 +5897,40 @@ Prefab:
     - target: {fileID: 1650761860263942, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461295131974270, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341972697903234, guid: eae23d17ee1992c4fa548691fefc3aac,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae23d17ee1992c4fa548691fefc3aac, type: 2}

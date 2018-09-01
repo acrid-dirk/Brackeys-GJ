@@ -50,12 +50,17 @@ public class LightCrystal : MonoBehaviour {
 		}
 
 	}
-	public void OnCollisionEnter(Collision other){
-		if(other.collider.tag == "Crystal"){
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Crystal"){
 			hasCrystal = true;
 			textUpTimer = 0f;
 			crystal.SetActive(false);
 		}
+	}
+
+	public void OnCollisionEnter(Collision other){
 		if(other.collider.tag == "End" && hasCrystal){
 			crystalAquiredText.text = "";
 			endPanel.SetActive(true);
