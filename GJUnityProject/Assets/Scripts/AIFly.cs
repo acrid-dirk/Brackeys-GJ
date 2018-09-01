@@ -118,16 +118,6 @@ public class AIFly : MonoBehaviour {
 			if(Time.time >= idleTime){
 				state = AIState.Patrol;
 			}
-		}else{
-			// Constantly make sure we see the player, if we dont, give up and go back to patrolling
-			RaycastHit hit;
-			if(Physics.Raycast(transform.position, (player.position - transform.position).normalized, out hit, Mathf.Infinity)){
-				// Check if we hit something other than the player
-				if(hit.transform.root.CompareTag("Player")){
-					// Set us to go back to patrolling.
-					state = AIState.Targetting;
-				}
-			}
 		}
 	}
 
