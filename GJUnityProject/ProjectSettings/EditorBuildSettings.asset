@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dirk-TestLevel.unity
     guid: 55b7ffa8ba8355345ac19c4c2c08ce1d
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 29cdefaa6256ab1418599a66c642fd12
   m_configObjects: {}

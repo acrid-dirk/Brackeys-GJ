@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] Image deathFade;
 	[SerializeField] GameObject bottledCloud;
 	[SerializeField] GameObject deathPanel;
+	[SerializeField] GameObject pausePanel;
+	[SerializeField] AudioSource music;
+	[SerializeField] Slider volumeSlider;
 	Rigidbody rb;
 
 	[Header("Inputs")]
@@ -41,16 +44,22 @@ public class PlayerController : MonoBehaviour {
 		Time.timeScale = 1;
 		mouseLocked = true;
 		deathPanel.SetActive(false);
+		volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
+		music.volume = volumeSlider.value;
+		music.Play();
 	}
 
 	void Update () {
+
 		// Do mouse look first.
 		if(!dying){
 			SimulateMouse();
+			LockMouse();
+		}else{
+			// Make the mouse visible when we die and unlock it.
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 		}
-
-
-		LockMouse();
 
 		if(Vector3.Distance(transform.position, Vector3.zero) >= 300){
 			if(!dying){
@@ -81,23 +90,31 @@ public class PlayerController : MonoBehaviour {
 				}
 				break;
 		}
+
+		// Volume checks
+		if(PlayerPrefs.GetFloat("MusicVolume", 1) != volumeSlider.value){
+			PlayerPrefs.SetFloat("MusicVolume", volumeSlider.value);
+			music.volume = volumeSlider.value;
+			PlayerPrefs.Save();
+			music.Stop();
+			music.Play();
+		}
 	}
 
 	void LockMouse(){
-		// Check if the user pressed the left mouse button in game.
-		//if(Input.GetKeyDown(KeyCode.Mouse0)){
-			// Lock the mouse if they did.
-		//	mouseLocked = true;
-		//}
-		//else if(Input.GetKeyDown(KeyCode.Escape)){
-			// If the user pressed escape than unlock the mouse.
-		//	mouseLocked = false;
-		//}
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			// If the user pressed escape than unlock/lock the mouse.
+			mouseLocked = !mouseLocked;
+		}
 
 		if(mouseLocked){
+			Time.timeScale = 1;
+			pausePanel.SetActive(false);
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}else{
+			Time.timeScale = 0;
+			pausePanel.SetActive(true);
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 		}
@@ -198,7 +215,17 @@ public class PlayerController : MonoBehaviour {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 	}
+
+	public void BackToMenu(){
+		SceneManager.LoadScene(0);
+	}
+
 	public void Quit(){
 		Application.Quit();
+	}
+
+	public void Resume(){
+		Time.timeScale = 1;
+		mouseLocked = true;
 	}
 }
